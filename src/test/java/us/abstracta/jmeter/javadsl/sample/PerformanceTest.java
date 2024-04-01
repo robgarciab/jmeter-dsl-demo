@@ -93,7 +93,7 @@ public class PerformanceTest {
                         .holdFor(Duration.ofMinutes(5))
                         .threadsPerEngine(100)
                         .testTimeout(Duration.ofMinutes(20)));
-        assertThat(stats.overall().sampleTimePercentile99()).isLessThan(Duration.ofSeconds(5));
+        assertThat(stats.overall().sampleTimePercentile99()).isLessThan(Duration.ofSeconds(3));
     }
 
 }
