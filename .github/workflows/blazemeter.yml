@@ -28,6 +28,8 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
+      env:
+        BZ_TOKEN: ${{ secrets.BZ_TOKEN }}
       run: mvn clean test
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
