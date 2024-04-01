@@ -4,7 +4,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static us.abstracta.jmeter.javadsl.JmeterDsl.*;
 import static us.abstracta.jmeter.javadsl.wrapper.WrapperJmeterDsl.*;
 
-import java.io.IOException;
 import java.time.Duration;
 
 import org.apache.jmeter.protocol.http.gui.DNSCachePanel;
@@ -87,13 +86,13 @@ public class PerformanceTest {
                                 )
                         )
                 ).runIn(new BlazeMeterEngine(System.getenv("BZ_TOKEN"))
-                        .totalUsers(50)
+                        .totalUsers(100)
                         .projectId(1437484)
                         .testName("Demo Blaze JMeter DSL")
                         .holdFor(Duration.ofMinutes(5))
                         .threadsPerEngine(100)
                         .testTimeout(Duration.ofMinutes(20)));
-        assertThat(stats.overall().sampleTimePercentile99()).isLessThan(Duration.ofSeconds(2));
+        assertThat(stats.overall().sampleTimePercentile99()).isLessThan(Duration.ofSeconds(3));
     }
 
 }
