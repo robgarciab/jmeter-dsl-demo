@@ -37,51 +37,20 @@ public class PerformanceTest {
                         threadGroup(1, 1,
                                 transaction("Test",
                                         httpSampler("https://demoblaze.com/", "https://${BASE_URL_1}")
-                                                .header("Sec-Fetch-Site", "none"),
-                                        httpSampler("https://demoblaze.com/", "https://${BASE_URL_1}")
-                                                .header("sec-ch-ua-arch", "\"x86\"")
-                                                .header("sec-ch-ua-platform-version", "\"15.0.0\"")
-                                                .header("sec-ch-ua-model", "\"\"")
-                                                .header("sec-ch-ua-bitness", "\"64\"")
-                                                .header("sec-ch-ua-wow64", "?0")
-                                                .header("sec-ch-ua-full-version-list", "\"Google Chrome\";v=\"123.0.6312.86\", \"Not:A-Brand\";v=\"8.0.0.0\", \"Chromium\";v=\"123.0.6312.86\"")
                                                 .header("Sec-Fetch-Site", "none")
                                                 .children(
-                                                        constantTimer(Duration.ofMillis(5))
+                                                        constantTimer(Duration.ofMillis(750))
                                                 ),
                                         httpSampler("https://demoblaze.com/prod.html?idp_=1", "https://${BASE_URL_1}/prod.html")
                                                 .header("Sec-Fetch-Site", "same-origin")
                                                 .rawParam("idp_", "1")
                                                 .children(
-                                                        constantTimer(Duration.ofMillis(4265))
-                                                ),
-                                        httpSampler("https://demoblaze.com/prod.html?idp_=1", "https://${BASE_URL_1}/prod.html")
-                                                .header("sec-ch-ua-arch", "\"x86\"")
-                                                .header("sec-ch-ua-platform-version", "\"15.0.0\"")
-                                                .header("sec-ch-ua-model", "\"\"")
-                                                .header("sec-ch-ua-bitness", "\"64\"")
-                                                .header("sec-ch-ua-wow64", "?0")
-                                                .header("sec-ch-ua-full-version-list", "\"Google Chrome\";v=\"123.0.6312.86\", \"Not:A-Brand\";v=\"8.0.0.0\", \"Chromium\";v=\"123.0.6312.86\"")
-                                                .header("Sec-Fetch-Site", "same-origin")
-                                                .rawParam("idp_", "1")
-                                                .children(
-                                                        constantTimer(Duration.ofMillis(6))
+                                                        constantTimer(Duration.ofMillis(750))
                                                 ),
                                         httpSampler("https://demoblaze.com/cart.html", "https://${BASE_URL_1}/cart.html")
                                                 .header("Sec-Fetch-Site", "same-origin")
                                                 .children(
-                                                        constantTimer(Duration.ofMillis(12812))
-                                                ),
-                                        httpSampler("https://demoblaze.com/cart.html", "https://${BASE_URL_1}/cart.html")
-                                                .header("sec-ch-ua-arch", "\"x86\"")
-                                                .header("sec-ch-ua-platform-version", "\"15.0.0\"")
-                                                .header("sec-ch-ua-model", "\"\"")
-                                                .header("sec-ch-ua-bitness", "\"64\"")
-                                                .header("sec-ch-ua-wow64", "?0")
-                                                .header("sec-ch-ua-full-version-list", "\"Google Chrome\";v=\"123.0.6312.86\", \"Not:A-Brand\";v=\"8.0.0.0\", \"Chromium\";v=\"123.0.6312.86\"")
-                                                .header("Sec-Fetch-Site", "same-origin")
-                                                .children(
-                                                        constantTimer(Duration.ofMillis(8))
+                                                        constantTimer(Duration.ofMillis(750))
                                                 )
                                 )
                         )
