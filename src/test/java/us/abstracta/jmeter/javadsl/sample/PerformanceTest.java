@@ -86,13 +86,13 @@ public class PerformanceTest {
                                 )
                         )
                 ).runIn(new BlazeMeterEngine(System.getenv("BZ_TOKEN"))
-                        .totalUsers(100)
+                        .totalUsers(200)
                         .projectId(1437484)
                         .testName("Demo Blaze JMeter DSL")
                         .holdFor(Duration.ofMinutes(5))
                         .threadsPerEngine(100)
                         .testTimeout(Duration.ofMinutes(20)));
-        assertThat(stats.overall().sampleTimePercentile99()).isLessThan(Duration.ofSeconds(3));
+        assertThat(stats.overall().sampleTimePercentile99()).isLessThan(Duration.ofSeconds(1));
     }
 
 }
