@@ -55,11 +55,12 @@ public class PerformanceTest {
                                 )
                         )
                 ).runIn(new BlazeMeterEngine(System.getenv("BZ_TOKEN"))
-                        .totalUsers(210)
+                        .totalUsers(150)
                         .projectId(1437484)
                         .testName("Demo Blaze JMeter DSL")
-                        .holdFor(Duration.ofMinutes(4))
-                        .threadsPerEngine(100)
+                        .rampUpFor(Duration.ofMinutes(5))
+                        .holdFor(Duration.ofMinutes(10))
+                        .threadsPerEngine(50)
                         .testTimeout(Duration.ofMinutes(20)));
         assertThat(stats.overall().sampleTimePercentile99()).isLessThan(Duration.ofSeconds(1));
     }
