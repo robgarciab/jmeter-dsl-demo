@@ -58,8 +58,8 @@ public class PerformanceTest {
                         .totalUsers(150)
                         .projectId(1437484)
                         .testName("Demo Blaze JMeter DSL")
-                        .rampUpFor(Duration.ofMinutes(5))
-                        .holdFor(Duration.ofMinutes(10))
+                        .rampUpFor(Duration.ofMinutes(1))
+                        .holdFor(Duration.ofMinutes(4))
                         .threadsPerEngine(50)
                         .testTimeout(Duration.ofMinutes(20)));
         assertThat(stats.overall().sampleTimePercentile99()).isLessThan(Duration.ofSeconds(1));

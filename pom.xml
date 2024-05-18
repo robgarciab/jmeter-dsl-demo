@@ -11,6 +11,7 @@
   <properties>
     <!-- using Java 11 instead of 17 since is the latest LTS JMeter has support for -->
     <maven.compiler.release>11</maven.compiler.release>
+    <jmterdsl.version>1.28</jmterdsl.version>
   </properties>
 
   <build>
@@ -35,18 +36,18 @@
     <dependency>
       <groupId>us.abstracta.jmeter</groupId>
       <artifactId>jmeter-java-dsl</artifactId>
-      <version>1.26</version>
+      <version>${jmterdsl.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>us.abstracta.jmeter</groupId>
       <artifactId>jmeter-java-dsl-wrapper</artifactId>
-      <version>1.26</version>
+      <version>${jmterdsl.version}</version>
     </dependency>
     <dependency>
       <groupId>us.abstracta.jmeter</groupId>
       <artifactId>jmeter-java-dsl-blazemeter</artifactId>
-      <version>1.26</version>
+      <version>${jmterdsl.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
