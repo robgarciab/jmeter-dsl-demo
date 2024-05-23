@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 import us.abstracta.jmeter.javadsl.blazemeter.BlazeMeterEngine;
 import us.abstracta.jmeter.javadsl.core.TestPlanStats;
 
-public class PerformanceTest {
+public class TestDemoBlaze {
 
     @Test
     public void test() throws Exception {
